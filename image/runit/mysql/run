@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ ! "$(ls -A $DATA_DIR)" ]]; then
+    cp -a /var/lib/mysql/. $DATA_DIR
+fi
+
+/sbin/setuser mysql mysqld_safe
